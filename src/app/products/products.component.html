@@ -1,0 +1,8 @@
+<div class="products">
+  <button class="btn" (click)="getProducts()">Get products</button>
+  <div class="row">
+    <app-product class="col-4" [product]="product" *ngFor="let product of products"></app-product>
+  </div>
+</div>
+
+

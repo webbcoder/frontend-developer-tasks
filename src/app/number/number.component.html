@@ -1,0 +1,26 @@
+<ng-template appRef></ng-template>
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-control">
+    <label>Number</label>
+    <input type="text" placeholder="Enter integer number..." formControlName="number">
+    <div class="validation"
+         *ngIf="form.get('number').invalid && form.get('number').touched"
+    >
+      <small
+        *ngIf="form.get('number').errors.required"
+      >The field cannot be empty.</small>
+      <small
+        *ngIf="form.get('number').errors.pattern"
+      >This field must contains just numbers
+      </small>
+      <small
+        *ngIf="form.get('number').errors.maxlength"
+      >Field length must be no more than
+        {{form.get('number').errors.maxlength.requiredLength}}.
+        Now length {{form.get('number').errors.maxlength.actualLength}}
+      </small>
+    </div>
+  </div>
+  <button class="btn" type="submit" [disabled]="form.invalid">Set</button>
+  <button class="btn" type="button" (click)="remove()" >Clear</button>
+</form>

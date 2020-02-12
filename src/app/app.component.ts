@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {RefDirective} from "./ref.directive";
 
 @Component({
   selector: 'app-root',

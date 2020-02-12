@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="text-center">
+    <p>#{{product.id}}</p>
+    <h4 >{{product.title}}</h4>
+    <h5>{{product.sku| uppercase}}</h5>
+  </div>
+  <img src="{{product.image}}" alt="">
+  <h5 class="text-uppercase text-center options-title">Product options:</h5>
+  <ul *ngFor="let option of product.options">
+    <li>
+      <p>Metal type:<span>{{option.metal_type}}</span></p>
+    </li>
+    <li>
+      <p>Metal color:<span>{{option.metal_color}}</span></p>
+    </li>
+    <li>
+      <p>Stone shape:<span>{{option.stone_shape}}</span></p>
+    </li>
+    <li>
+      <p>Gemstone color:<span>{{option.gemstone_color}}</span></p>
+    </li>
+  </ul>
+  <h3 class="text-center">{{product.price | number:'.0-0'}}.00<span>{{product.currency}}</span></h3>
+</div>
+
